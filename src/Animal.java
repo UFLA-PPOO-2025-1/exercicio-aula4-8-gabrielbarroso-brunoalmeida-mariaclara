@@ -50,7 +50,7 @@ public abstract class Animal implements Ator {
      * Verifica se o animal está vivo ou não.
      * @return verdadeiro se o animal ainda estiver vivo.
      */
-    public boolean estaVivo()
+    public boolean estaAtivo()
     {
         return vivo;
     }
@@ -114,7 +114,7 @@ public abstract class Animal implements Ator {
      * Novos nascimentos serão feitos em locais vizinhos livres.
      * @param novosAnimais Uma lista para retornar os animais recém-nascidos.
      */
-    protected void reproduzir(List<Animal> novosAnimais)
+    protected void reproduzir(List<Ator> novosAtores)
     {
         // Novos animais nascem em locais vizinhos.
         // Obtém uma lista de locais vizinhos livres.
@@ -123,7 +123,7 @@ public abstract class Animal implements Ator {
         for(int n = 0; n < nascimentos && locaisLivres.size() > 0; n++) {
             Localizacao local = locaisLivres.remove(0);
             Animal filhote = criarNovoFilhote(false, obterCampo(), local);
-            novosAnimais.add(filhote);
+            novosAtores.add(filhote);
         }
     }
 
